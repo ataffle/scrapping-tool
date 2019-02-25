@@ -1,0 +1,6 @@
+<p><%= @properties.length %> résultats trouvés</p>
+<% @properties.each do |property| %>
+<ul>
+  <li><%= property.ref %> | <%= property.date %> | <%= property.city %> | <%= property.title %> | <%= property.price %> | <%= property.url %> | <%= property.phone %></li>
+</ul>
+<% end %>

@@ -21,21 +21,30 @@ class PagesController < ApplicationController
       urls << full_url
     end
 
-    properties =[]
+    @properties =[]
     urls.each do |url|
       html_file = open(url).read
       html_doc = Nokogiri::HTML(html_file)
       price = html_doc.search(".item-price").text.strip
       html_doc.search(".item-price").remove
       title = html_doc.search('.item-title').text.strip
-      phone = html_doc.at('.txt-indigo').text.strip
-
+      phone = html_doc.at('.txt-indigo').text.strip if html_doc.at('.txt-indigo')
+      full_date = html_doc.search(".item-date").text.strip
+      reference = full_date[11, 5]
+      date = full_date[19...full_date.length].to_date
+      property = {
+        "price" => price,
+        "url" => url,
+        "title" => title,
+        "phone" => phone,
+        "date" => full_date,
+        "reference" => reference,
+        "date" => date
+      }
+      @properties << property
       # mini_url = element.attribute('href').value
       # full_url = "https://www.pap.fr#{mini_url}"
       # urls << full_url
-      raise
     end
-
   end
-
 end

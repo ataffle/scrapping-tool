@@ -35,7 +35,7 @@ class PropertiesController < ApplicationController
     list_url = " "
     page_counter = 1
     @urls = []
-    # while list_url != init_url
+    3.times do
       page_counter == 1 ? page_url = init_url : page_url = list_url
       html_file = open(page_url).read
       html_doc = Nokogiri::HTML(html_file)
@@ -47,7 +47,6 @@ class PropertiesController < ApplicationController
       end
       page_counter += 1
       list_url = init_url + "-#{page_counter}"
-      raise
-    # end
+    end
   end
 end

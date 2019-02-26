@@ -1,3 +1,5 @@
 <h1>Scrap Me</h1>
-
-<%= link_to "Submit", properties_path, class: "btn-primary",  method: :post %>
+<%= simple_form_for :city, :url => properties_path, method: :post do |f| %>
+  <%= f.input :city, label: "City" %>
+  <%= f.submit "Submit", class: "btn-primary" %>
+<% end %>

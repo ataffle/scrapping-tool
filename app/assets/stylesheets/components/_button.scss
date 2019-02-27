@@ -1,0 +1,16 @@
+.btn-blue {
+  border: none;
+  color: white;
+  background-color: $blue-scrap;
+  padding: 7px 28px;
+  font-size: 24px;
+  transition: all 0.5s ease-out;
+  a {
+    text-decoration: none;
+  }
+  opacity: 1;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.6;
+  }
+}

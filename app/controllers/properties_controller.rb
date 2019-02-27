@@ -31,22 +31,35 @@ class PropertiesController < ApplicationController
   private
 
   def scrapping
-    init_url = "https://www.pap.fr/annonce/locations-meuble-lyon-69-g43590"
-    list_url = " "
-    page_counter = 1
     @urls = []
-    3.times do
-      page_counter == 1 ? page_url = init_url : page_url = list_url
-      html_file = open(page_url).read
-      html_doc = Nokogiri::HTML(html_file)
-      html_doc.search('.item-title').each do |element|
-        element.text.strip
-        mini_url = element.attribute('href').value
-        full_url = "https://www.pap.fr#{mini_url}"
-        @urls << full_url
-      end
-      page_counter += 1
-      list_url = init_url + "-#{page_counter}"
+    url = "https://www.pap.fr/annonce/locations-meuble-lyon-69-g43590"
+    html_file = open(url).read
+    html_doc = Nokogiri::HTML(html_file)
+    html_doc.search('.item-title').each do |element|
+      element.text.strip
+      mini_url = element.attribute('href').value
+      full_url = "https://www.pap.fr#{mini_url}"
+      @urls << full_url
     end
   end
+
+  # def scrapping_multiple
+  #   init_url = "https://www.pap.fr/annonce/locations-meuble-lyon-69-g43590"
+  #   list_url = " "
+  #   page_counter = 1
+  #   @urls = []
+  #   3.times do
+  #     page_counter == 1 ? page_url = init_url : page_url = list_url
+  #     html_file = open(page_url).read
+  #     html_doc = Nokogiri::HTML(html_file)
+  #     html_doc.search('.item-title').each do |element|
+  #       element.text.strip
+  #       mini_url = element.attribute('href').value
+  #       full_url = "https://www.pap.fr#{mini_url}"
+  #       @urls << full_url
+  #     end
+  #     page_counter += 1
+  #     list_url = init_url + "-#{page_counter}"
+  #   end
+  # end
 end

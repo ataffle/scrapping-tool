@@ -1,0 +1,28 @@
+.input-home {
+  height: 50px !important;
+  width: 400px !important;
+  margin-right: 16px;
+}
+
+.form-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.form-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-inbox {
+  margin-top: 64px;
+  width: 600px;
+  textarea {
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(200, 200, 200, 0.4)
+  }
+}

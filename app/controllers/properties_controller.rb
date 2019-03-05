@@ -2,7 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 
 class PropertiesController < ApplicationController
-  before_action :scrapping
+  before_action :scrapping_params, :scrapping
 
   def new
   end
@@ -32,7 +32,7 @@ class PropertiesController < ApplicationController
 
   def scrapping
     @urls = []
-    url = "https://www.pap.fr/annonce/locations-meuble-lyon-69-g43590"
+    url = params[:url_input]
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
     html_doc.search('.item-title').each do |element|
@@ -41,6 +41,10 @@ class PropertiesController < ApplicationController
       full_url = "https://www.pap.fr#{mini_url}"
       @urls << full_url
     end
+  end
+
+  def scrapping_params
+    params.require(:property).permit(:url_input)
   end
 
   # def scrapping_multiple

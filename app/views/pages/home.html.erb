@@ -3,8 +3,8 @@
     <h1>Scrap me !</h1>
     <p>Get in touch with owners quickly</p>
     <%= form_tag properties_path, method: :post, class: "form-inline form-home" do %>
-      <%= text_field_tag :url,
-        params[:url],
+      <%= text_field_tag :url_input,
+        params[:url_input],
         class: "form-control input-home",
         placeholder: "Enter URL"
       %>

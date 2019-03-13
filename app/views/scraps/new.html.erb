@@ -2,8 +2,12 @@
   <div class="banner-content">
     <h1>Scrap me !</h1>
     <p>Get in touch with owners quickly</p>
-    <%= simple_form_for(@scrap) do |f|, class: "form-inline form-home" %>
-      <%= f.input :url, label: "Enter URL", class: "form-control input-home" %>
+    <%= simple_form_for @scrap, html: {class: "form-inline form-home"} do |f| %>
+      <%= f.input :url,
+                  label: false,
+                  placeholder: "Enter URL",
+                  autofocus: true,
+                  input_html: {class: "form-control input-home"} %>
       <%= f.submit "Submit", class: "btn-blue" %>
     <% end %>
   </div>

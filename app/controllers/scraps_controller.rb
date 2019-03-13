@@ -8,11 +8,23 @@ def new
 end
 
 def create
+  @scrap = Scrap.new(scrap_params)
+  if @scrap.save
+    scrapping(@scrap.url)
+    redirect_to :controller => 'properties', :action => 'create'
+  else
+    redirect to root_path
+  end
 end
 
-def scrapping
+private
+
+def scrap_params
+  params.require(:scrap).permit(:url)
+end
+
+def scrapping(url)
   @urls = []
-  url = params[:url_input]
   html_file = open(url).read
   html_doc = Nokogiri::HTML(html_file)
   html_doc.search('.item-title').each do |element|
@@ -22,7 +34,5 @@ def scrapping
     @urls << full_url
   end
 end
-
-private
 
 end

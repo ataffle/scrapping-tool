@@ -23,7 +23,7 @@
           <td><%= property.date.strftime('%d/%m/%y') %></td>
           <td><%= property.phone %></td>
           <td>
-            <%= link_to property.url do %>
+            <%= link_to property.url, target: "_blank" do %>
               <i class="fas fa-external-link-alt"></i>
             <% end %>
           </td>

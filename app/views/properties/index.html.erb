@@ -1,32 +1,38 @@
 <div class="container-index">
   <p><%= @properties.length %> résultats trouvés</p>
-  <table class="table table-hover table-striped">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">City</th>
-        <th scope="col">Title</th>
-        <th scope="col">Rent</th>
-        <th scope="col">Posted on</th>
-        <th scope="col">Phone</th>
-        <th scope="col">URL</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @properties.each do |property| %>
-      <tr>
-        <td><%= property.id %></td>
-        <td><%= property.city %></td>
-        <td><%= property.title %></td>
-        <td><%= number_with_delimiter(property.price, :delimiter => ',') %></td>
-        <td><%= property.date.strftime('%b %Y') %></td>
-        <td><%= property.phone %></td>
-        <td><%= property.url %></td>
-      </tr>
+  <div class="table-responsive">
+    <table class="table table-hover table-striped table-condensed">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">City</th>
+          <th scope="col">Title</th>
+          <th scope="col">Rent</th>
+          <th scope="col">Posted on</th>
+          <th scope="col">Phone</th>
+          <th scope="col">URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @properties.each do |property| %>
+        <tr>
+          <td><%= property.id %></td>
+          <td><%= property.city %></td>
+          <td><%= property.title %></td>
+          <td><%= number_with_delimiter(property.price, :delimiter => ',') %></td>
+          <td><%= property.date.strftime('%d/%m/%y') %></td>
+          <td><%= property.phone %></td>
+          <td>
+            <%= link_to property.url, target: "_blank" do %>
+              <i class="fas fa-external-link-alt"></i>
+            <% end %>
+          </td>
+        </tr>
 
-      <% end %>
-    </tbody>
-  </table>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 

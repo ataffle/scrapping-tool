@@ -6,13 +6,15 @@
     <title>TODO</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

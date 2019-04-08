@@ -1,4 +1,4 @@
-#table-index-properties {
+#table-index {
   border-bottom: none;
   margin-bottom: 18px;
   border-collapse: separate;
@@ -36,5 +36,84 @@
   }
   input {
     background-color: none;
+  }
+}
+
+#table-index-properties {
+  border-bottom: none;
+  margin-bottom: 18px;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+  i {
+  color: $primary;
+  }
+  tbody tr {
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      background: #E6EDF9;
+    }
+  }
+  td {
+    padding: 20px 0px;
+    border: none;
+  }
+  tr td:first-child, tr td:last-child {
+    padding: 20px;
+  }
+  tr {
+    box-shadow: 1px 1px 3px rgba(200, 200, 200, 0.4);
+    border-radius: 2px;
+  }
+  tr:first-child {
+    box-shadow: none;
+    border: none;
+  }
+  th {
+    border: none;
+    color: #929497 !important;
+    font-weight: 600;
+    padding-left: 0;
+  }
+  input {
+    background-color: none;
+  }
+}
+
+.dataTables_length, .dataTables_info {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+#table-index-properties_paginate {
+  a {
+  font-size: 12px;
+  font-weight: lighter;
+  }
+  a.paginate_button.current {
+padding: 0.2em 0.5em;
+  }
+}
+
+#table-index-properties_length label {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+#table-index-properties_filter {
+  transform: translateY(-3px);
+  input {
+    box-shadow: none;
+    background: none;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #AAAAAA;
+    font-weight: lighter;
+    &:focus::-webkit-input-placeholder {
+      opacity: 0;
+    }
+  }
+  i {
+    color: $primary;
   }
 }

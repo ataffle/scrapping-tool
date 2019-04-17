@@ -1,0 +1,25 @@
+<div class="container-index-properties">
+  <div class="table-responsive">
+    <table class="table table-hover table-condensed" id="table-index-properties" >
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">URL</th>
+          <th scope="col"># properties</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @scraps.each do |scrap| %>
+        <tr>
+          <td><%= scrap.id %></td>
+          <td><%= scrap.created_at.strftime('%d/%m/%y') %></td>
+          <td><%= link_to scrap.scrap_url, target: "_blank" %></td>
+          <td><%= scrap.length %></td>
+        </tr>
+
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

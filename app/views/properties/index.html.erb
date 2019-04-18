@@ -19,7 +19,7 @@
           <td><%= property.city %></td>
           <td><%= property.title %></td>
           <td><%= number_with_delimiter(property.price, :delimiter => ',') %></td>
-          <td><%= property.date.strftime('%d/%m/%y') %></td>
+          <td><%= property.date %></td>
           <td><%= property.phone %></td>
           <td>
             <%= link_to property.url, target: "_blank" do %>

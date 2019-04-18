@@ -62,7 +62,6 @@ class ScrapsController < ApplicationController
       reference = full_date[11, 5]
       date = full_date[19...full_date.length]
       # date = Date.strptime(full_date[19...full_date.length], "%d/%m/%Y")
-      raise
       @property = Property.create(price: price, title: title, phone: phone, ref: reference, date: date, url: url, city: full_city, scrap_id: @scrap.id)
 
     end

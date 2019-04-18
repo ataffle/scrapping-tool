@@ -5,17 +5,19 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Date</th>
-          <th scope="col">URL</th>
+          <th scope="col">City</th>
           <th scope="col"># properties</th>
+          <th scope="col">URL</th>
         </tr>
       </thead>
       <tbody>
         <% @scraps.each do |scrap| %>
-        <tr>
+        <tr onclick="location.href='<%= scrap_path(scrap) %>'" >
           <td><%= scrap.id %></td>
           <td><%= scrap.created_at.strftime('%d/%m/%y') %></td>
+          <td><%= scrap.city %></td>
+          <td><%= scrap.number %></td>
           <td><%= link_to scrap.scrap_url, target: "_blank" %></td>
-          <td><%= scrap.length %></td>
         </tr>
 
         <% end %>

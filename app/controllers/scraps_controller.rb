@@ -22,9 +22,7 @@ class ScrapsController < ApplicationController
   def show
     @scrap = Scrap.find(params[:id])
     @properties = Property.where(scrap_id: @scrap.id)
-    @scrap.number = @properties.length
-    @scrap.city = @properties.last.city
-    @scrap.save
+    @scrap.update(city: @properties.last.city, number: @properties.length)
   end
 
   def index
@@ -60,10 +58,9 @@ class ScrapsController < ApplicationController
       full_city = html_doc.search(".margin-bottom-8").text.strip
       full_date = html_doc.search(".item-date").text.strip
       reference = full_date[11, 5]
-      date = full_date[19...full_date.length]
-      # date = Date.strptime(full_date[19...full_date.length], "%d/%m/%Y")
+      string_date = full_date[19...full_date.length]
+      date = Date.parse(string_date) rescue nil
       @property = Property.create(price: price, title: title, phone: phone, ref: reference, date: date, url: url, city: full_city, scrap_id: @scrap.id)
-
     end
   end
 end

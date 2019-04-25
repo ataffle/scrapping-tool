@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 gem 'chronic', '~> 0.10.2'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

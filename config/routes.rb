@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   get 'urls/create'
   get 'urls/new'
   get 'urls/index'

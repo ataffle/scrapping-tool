@@ -29,6 +29,13 @@
               <% end %>
             </li>
             <li>
+              <% if current_user.admin? %>
+                <%= link_to admin_root_path do %>
+                  <i class="fas fa-columns"></i>  <%= t(".dashboard", default: "Dashboard") %>
+                <% end %>
+              <% end %>
+            </li>
+            <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>

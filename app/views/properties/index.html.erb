@@ -3,7 +3,7 @@
     <table class="table table-hover table-condensed" id="table-index-properties" data-toggle="table" data-sort-name="Posted on" data-sort-order="desc">
       <thead>
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col">Ref</th>
           <th scope="col">City</th>
           <th scope="col">Title</th>
           <th scope="col">Rent</th>
@@ -15,7 +15,7 @@
       <tbody>
         <% @properties.each do |property| %>
         <tr>
-          <td><%= property.id %></td>
+          <td><%= property.ref %></td>
           <td><%= property.city %></td>
           <td><%= property.title %></td>
           <td><%= number_with_delimiter(property.price, :delimiter => ',') %></td>

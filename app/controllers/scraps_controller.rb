@@ -22,7 +22,7 @@ class ScrapsController < ApplicationController
   def show
     @scrap = Scrap.find(params[:id])
     @properties = Property.where(scrap_id: @scrap.id)
-    @scrap.update(city: @properties.last.city, number: @properties.length)
+    @scrap.update(city: @properties.last.city, number: @properties.length) unless @properties.empty?
   end
 
   def index

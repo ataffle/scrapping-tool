@@ -8,13 +8,16 @@ ActiveAdmin.register Property do
     column :city
     column :title
     column "Monthly rent", :price
-    column "Posted on", :date
+    column "Posted on", :date do |property|
+      property.date.strftime( "%d-%m-%Y") unless property.date.nil?
+    end
     column :phone
     column :url do |property|
       link_to "Link", property.url, target: "_blank"
     end
     actions
   end
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

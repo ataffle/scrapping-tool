@@ -33,6 +33,7 @@
     color: #929497 !important;
     font-weight: 600;
     padding-left: 0;
+    font-size: 16px;
   }
   input {
     background-color: none;
@@ -74,6 +75,7 @@
     color: #929497 !important;
     font-weight: 600;
     padding-left: 0;
+    font-size: 16px;
   }
   input {
     background-color: none;
@@ -102,6 +104,7 @@ padding: 0.2em 0.5em;
 
 #table-index-properties_filter {
   transform: translateY(-3px);
+  margin-bottom: 16px;
   input {
     box-shadow: none;
     background: none;
@@ -116,4 +119,10 @@ padding: 0.2em 0.5em;
   i {
     color: $primary;
   }
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+   background : none;
 }

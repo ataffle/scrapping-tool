@@ -1,5 +1,8 @@
 <div class="container-index-properties">
-  <h3><%= @properties.length %> new properties scrapped</h3>
+  <div class="flex-h-simple" style="margin-bottom: 24px;">
+    <h3 style="margin-right: 32px; margin-bottom: 0px; margin-top: 0px;"><%= @properties.length %> new properties scrapped</h3>
+    <%= link_to "Scrap again", root_path, class: "btn-blue btn-small" %>
+  </div>
   <div class="table-responsive">
     <table class="table table-hover table-condensed" id="table-index-properties" data-toggle="table" data-sort-name="Posted on" data-sort-order="desc">
       <thead>

@@ -1,0 +1,17 @@
+/* Main navbar */
+.flex-h-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-h-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-h-simple {
+  display: flex;
+  align-items: center;
+}
